@@ -10,7 +10,11 @@ When using the code, all models generally follow these steps:
 3. Preprocess data  
 4. Define the model  
 5. Train and test the model  
-6. Save the model and output results  
+6. Save the model and output results
+
+When running the "-分类器-回归器" code, you should first train and save the model during the initial run, then proceed with loading the model, result prediction, data saving, and metric calculation. Specifically, the code before "model=load_model" handles data preprocessing—run this first, followed by the second-to-last code block (model definition function), and finally the last code block (model training and saving). For subsequent runs when the model is already saved, you only need to execute the sections before the second-to-last code block (i.e., no need to redefine or retrain the model) to obtain the data results. The reason for splitting the runs is to account for complex models that may exceed GPU memory limits.
+
+In the code, all .ipynb files with names containing "论文出图" (thesis plotting) or "散点图" (scatter plot) are for result visualization (plotting). Files with "POD-FAR" are used for classifier metric calculations, while those labeled "数据预处理" (data preprocessing) perform data preprocessing operations.
 
 Ensure all required libraries are installed before importing them. All model code is presented in function form, with detailed usage instructions (parameter definitions) available in the "Python气象自动绘图函数说明" document (written in Chinese). The "Auto_paint_self" file has already been uploaded.  
 
